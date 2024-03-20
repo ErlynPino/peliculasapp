@@ -2,12 +2,12 @@ import { CommonModule } from '@angular/common';
 import { Component, Input } from '@angular/core';
 import { Movie } from '../../interfaces/cartelera.interface';
 import { Router } from '@angular/router';
-// import { PipesModule } from '../../pipes/pipes.module';
+import { PipesModule } from '../../pipes/pipes.module';
 
 @Component({
   selector: 'app-peliculas-poster',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, PipesModule],
   templateUrl: './peliculas-poster.component.html',
   styleUrl: './peliculas-poster.component.css'
 })
