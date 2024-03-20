@@ -23,8 +23,8 @@ export class ScrollToTopComponent {
     }
 
     scrollTop(){
-      this.document.body.scrollTop = 0;
-      this.document.documentElement.scrollTop = 0;
+      this.document.documentElement.scrollTo({top:0, behavior:'smooth'});
+      this.document.body.scrollTo({top:0, behavior:'smooth'});
     }
 
 }

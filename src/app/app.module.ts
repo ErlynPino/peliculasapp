@@ -5,6 +5,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NabvarComponent } from './components/nabvar/nabvar.component';
+import { ScrollToTopComponent } from './components/scroll-to-top/scroll-to-top.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { NabvarComponent } from './components/nabvar/nabvar.component';
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    NabvarComponent
+    NabvarComponent,
+    ScrollToTopComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

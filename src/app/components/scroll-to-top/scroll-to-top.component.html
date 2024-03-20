@@ -1,1 +1,4 @@
-<p>scroll-to-top works!</p>
+<div class="scroll-to-top" [ngClass]="{'show-scrollTop': windowScrolled}">
+    <button class="btn btn-secundary active" data-toggle="button" aria-prassed="true" (click)="scrollTop()"><i class="fa fa-chevron-up"></i></button>
+    
+</div>
