@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Pipe } from '@angular/core';
 import { HttpClient} from '@angular/common/http';
 import { Observable, map, of, tap } from 'rxjs';
 import { CarteleraResponse, Movie } from '../interfaces/cartelera.interface';
@@ -32,5 +32,10 @@ export class PeliculasService {
         this.cargando = false;
       })
     )
+  }
+
+  buscarPeliculas(texto:string):Observable<Movie[]>{
+    return this.http.get<CarteleraResponse>(`${this.URL}/search/movie?query=${texto}&language=es-ES&page=1`,{headers:this.headers})
+    .pipe( map(res=>res.results))
   }
 }

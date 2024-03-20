@@ -9,10 +9,10 @@
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                 
             </ul>
-            <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Buscar Pelicula " >
-                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit">Buscar</button>
-            </form>
+            <div class="d-flex" role="search">
+                <input #txtBuscar class="form-control me-2" type="search" (keyup.enter)="buscarPelicula(txtBuscar.value)" placeholder="Buscar Pelicula " >
+                <button class="btn btn-outline-danger my-2 my-sm-0" type="submit" (click)="buscarPelicula(txtBuscar.value)">Buscar</button>
+            </div>
         </div>
     </div>
 </nav>

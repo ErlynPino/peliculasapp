@@ -1,6 +1,6 @@
 import { CommonModule } from '@angular/common';
-import { Component } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Router, RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-nabvar',
@@ -9,6 +9,19 @@ import { RouterLink } from '@angular/router';
   templateUrl: './nabvar.component.html',
   styleUrl: './nabvar.component.css'
 })
-export class NabvarComponent {
+export class NabvarComponent implements OnInit{
 
+  constructor(private router:Router) { }
+
+  ngOnInit(): void {
+
+  }
+
+  buscarPelicula(texto:string){
+    texto = texto.trim();
+    if(texto.length === 0){
+      return;
+    }
+    this.router.navigate(['/buscar', texto]);
+  }
 }
