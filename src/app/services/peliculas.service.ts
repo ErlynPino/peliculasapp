@@ -38,4 +38,8 @@ export class PeliculasService {
     return this.http.get<CarteleraResponse>(`${this.URL}/search/movie?query=${texto}&language=es-ES&page=1`,{headers:this.headers})
     .pipe( map(res=>res.results))
   }
+
+  resetPeliculaPage(){
+    this.carteleraPage = 1;
+  }
 }

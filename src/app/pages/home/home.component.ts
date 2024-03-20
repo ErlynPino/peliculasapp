@@ -27,7 +27,9 @@ export class HomeComponent  implements OnInit{
     }
   }
 
-  constructor(private peliculasSvc: PeliculasService){}
+  constructor(private peliculasSvc: PeliculasService){
+    this.peliculasSvc.resetPeliculaPage();
+  }
 
   ngOnInit(): void {
     this.loadMovies();

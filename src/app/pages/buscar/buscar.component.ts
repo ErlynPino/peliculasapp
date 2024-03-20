@@ -15,19 +15,18 @@ import { Movie } from '../../interfaces/cartelera.interface';
 export class BuscarComponent implements OnInit{
 
   texto = '';
-  movie: Movie[] = [];
+  movies: Movie[] = [];
   noMovie = ''
 
   constructor(private activeRouter:ActivatedRoute, private peliculasSvc:PeliculasService){}
 
-
-
+  
   ngOnInit(): void {
       this.activeRouter.params.subscribe(params => {
         this.texto = params['texto'];
         this.peliculasSvc.buscarPeliculas(this.texto).subscribe(movie => {
-          this.movie = movie;
-          this.noMovie = this.movie.length === 0 ? 'No se encontraron peliculas' : '';
+          this.movies = movie;
+          this.noMovie = this.movies.length === 0 ? ' No se encontraron peliculas' : '';
         })
       })
   }
